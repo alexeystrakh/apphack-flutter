@@ -57,16 +57,12 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Icon(Icons.account_balance_wallet),
               title: Text('Wallet'),
             ),
-            // BottomNavigationBarItem(
-            //   icon: Icon(Icons.list),
-            //   title: Text('List'),
-            // ),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),
               title: Text('Settings'),
             ),
           ]),
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Colors.white,
     );
   }
 }

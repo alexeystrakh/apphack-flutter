@@ -26,22 +26,45 @@ class Tab1 extends StatelessWidget {
       child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              "Available Balance",
-              style: TextStyle(fontSize: 40, color: Colors.white),
-            ),
-            Text(
-              "\$6 652.60",
-              style: TextStyle(
-                  fontSize: 35,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
-            ),
-            Text(
-              "Your Cryptocurrencies",
-              style: TextStyle(fontSize: 16, color: Colors.grey),
-            ),
+            Container(
+                padding: EdgeInsets.all(30),
+                child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        "Available Balance",
+                        style: TextStyle(fontSize: 40, color: Colors.white),
+                      ),
+                      Text(
+                        "+9.44%",
+                        style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.greenAccent),
+                      ),
+                      Text(
+                        "\$6 652.60",
+                        style: TextStyle(
+                            fontSize: 35,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                      Text(
+                        "Your Cryptocurrencies",
+                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                      )
+                    ]),
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                        colors: [Colors.blue, Colors.green]),
+                    shape: BoxShape.rectangle,
+                    borderRadius:
+                        BorderRadius.only(bottomLeft: Radius.circular(40.0)))),
             new Expanded(
                 child: ListView.builder(
                     padding: const EdgeInsets.all(8),
@@ -50,13 +73,17 @@ class Tab1 extends StatelessWidget {
                       return Container(
                         height: 60,
                         margin: EdgeInsets.all(20),
-                        child: Center(child: Text('${entries[index].name} \$${entries[index].balance}')),
+                        child: Center(
+                            child: Text(
+                                '${entries[index].name} \$${entries[index].balance}')),
                         decoration: BoxDecoration(
-                          color: Colors.white70,
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25.0),
-                              bottomRight: Radius.circular(25.0))),
+                            gradient: LinearGradient(
+                                begin: Alignment.topRight,
+                                end: Alignment.bottomLeft,
+                                colors: [Colors.green, Colors.blue]),
+                            shape: BoxShape.rectangle,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(15))),
                       );
                     })),
           ]),
